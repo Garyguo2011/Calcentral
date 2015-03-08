@@ -1,7 +1,9 @@
 CalcentralTaskPlanner::Application.routes.draw do
   devise_for :users
 
-  resources :tasks
+  resources :tasks do
+    resources :subtasks
+  end
   # root to: 'tasks#index'
   root to: 'tasks#index'
 
